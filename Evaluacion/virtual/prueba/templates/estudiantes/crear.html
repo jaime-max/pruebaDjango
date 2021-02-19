@@ -1,0 +1,42 @@
+{% extends 'master.html' %}
+{% block contenido %}
+
+<html>
+
+<head>
+    <meta>
+    <title>Crear Estudiante</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<h4>Crear Estudiante</h4>
+<div class="container">
+    <form method="POST">{% csrf_token %}
+        <div class="form-group">
+            <label for="id_cedula">Cedula:</label>
+            <input type="text" class="form-control" name="cedula" maxlength="10" required id="id_cedula">
+        </div><br>
+        <div class="form-group">
+            <label for="id_apellidos">Apellidos:</label>
+            <input type="text" class="form-control" name="apellidos" maxlength="70" required id="id_apellidos">
+        </div><br>
+        <div class="form-group">
+            <label for="id_nombres">Nombres:</label>
+            <input type="text" class="form-control" name="nombres" maxlength="70" required id="id_nombres">
+        </div><br>
+        <div class="form-group">
+            <label for="id_genero">Genero:</label>
+            <select name="genero" class="form-control" id="id_genero">
+                <option value="femenino">Femenino</option>
+
+                <option value="masculino">Masculino</option>
+            </select>
+        </div><br>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Crear Estudiante</button>
+        </div><br>
+    </form>
+</div>
+
+</html>
+{% endblock %}
